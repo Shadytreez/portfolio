@@ -1,38 +1,31 @@
 import React from 'react';
 import { 
   BrowserRouter as Router, 
-  Switch, 
+  Routes , 
   Route, 
   Link,
-  NavLink
+  NavLink,
 } from 'react-router-dom';
 
-import Logo from './image/Logo.png';
-import Home from './pages/home';
 
+import Home from './pages/home.js';
+import Projects from './pages/projects.js';
+import Experience from './pages/experience'
 import './App.css';
-
 
 function Navigation(props) {
   return (
-    <nav className="navbar navbar-dark bg-dark shadow mb-3">
-      <ul className="navbar-nav mr-auto">
-      <li className="nav-item">
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark shadow mb-3">
       <Link className="navbar-brand" to="/">Home</Link>
-        </li>
+      <ul className="navbar-nav mr-auto">
         <li className="nav-item">
-          <NavLink className="nav-link" exact to="/posts/new">
+          <NavLink className="nav-link" exact to="/projects">
             Projects
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" exact to="/profile">
+          <NavLink className="nav-link" exact to="/experiences">
             Experiences
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink className="nav-link" exact to="/about-us">
-            About Us
           </NavLink>
         </li>
       </ul>
@@ -44,28 +37,18 @@ function Navigation(props) {
 class App extends React.Component {
   render() {
     return (
-      <div class="container">
-        <img src={Logo}  width="1000" height="100"/>
-        <div class="row">
-        
-        <Router>
-        <div class="col-sm-2 "> 
+     
+      <Router>
           <Navigation />
-          </div>
-          <div class="col-sm-10"> 
-          
-           
-              <Switch>
-              <Route path="/" component={Home} />
-                
-              </Switch>
-            
-          
-          </div>
+          <div class="row d-flex justify-content-center">
+              <Routes>
+              <Route path="/" element={<Home/>} />
+              <Route path="/projects" element={<Projects/>} />
+              <Route path="/experiences" element={<Experience/>} />
+              </Routes>
+          </div> 
         </Router>
-       
-        </div>
-        </div>
+        
     );
   }
 }
