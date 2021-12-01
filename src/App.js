@@ -11,6 +11,7 @@ import {
 import Home from './pages/home.js';
 import Projects from './pages/projects.js';
 import Experience from './pages/experience'
+import Contact from './pages/contact'
 import './App.css';
 
 function Navigation(props) {
@@ -26,6 +27,11 @@ function Navigation(props) {
         <li className="nav-item">
           <NavLink className="nav-link" exact to="/experiences">
             Experiences
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" exact to="/contact">
+            Contact
           </NavLink>
         </li>
       </ul>
@@ -45,6 +51,7 @@ class App extends React.Component {
               <Route path="/" element={<Home/>} />
               <Route path="/projects" element={<Projects/>} />
               <Route path="/experiences" element={<Experience/>} />
+              <Route path="/contact" element={<Contact/>} />
               </Routes>
           </div> 
         </Router>

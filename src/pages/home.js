@@ -12,7 +12,7 @@ class Home extends React.Component {
         <div class="row">
             <div class="col-sm-6 ">
                 <div className="container-fluid text center">
-                <img src={Picture} class="rounded mx-auto d-block"  width="300" height="300"/>
+                <img src={Picture} class="rounded mx-auto d-block"  width="400" height="400"/>
                 </div>
                 
             </div> 
